@@ -1,10 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/user.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost/smart-city'),
+    AuthModule,
+    UsersModule,
+    // CalendrierCollecteModule,
+    // PointDeCollecteModule,
+    // CentreDeRecyclageModule,
+  ],
 })
 export class AppModule {}
