@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { User } from '@/lib/definition';
+import axios from 'axios';
 
 
 const handler = NextAuth({
@@ -18,17 +19,21 @@ const handler = NextAuth({
             },
 
             async authorize(credentials): Promise<User | null> {
-                console.log('ok');
                 if (!credentials) return null;
 
                 const { email, password } = credentials;
 
                 // const user = mockDatabase.find(user => user.email === email && user.password === password);
 
+                const user = await axios.post(`http://localhost:8000/auth/login`, {
+                    email: email,
+                    password: password
+                })
+
+                console.log(user.data)
+
                 if (user) {
-                    const { password, ...userWithoutPassword } = user;
-                    console.log(userWithoutPassword);
-                    return userWithoutPassword;
+                    return user.data;
                 } else {
                     return null;
                 }
