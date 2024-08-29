@@ -3,3 +3,4 @@ node_modules
 .next
 favicon.ico
 *.svg
+.env
