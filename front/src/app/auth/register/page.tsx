@@ -19,7 +19,9 @@ export default function Register() {
             adresse: formData.get('address'),
         })
 
-        console.log(response);
+        if (response.status === 201) {
+            window.location.href = "/auth/login";
+        }
     }
 
     return (
