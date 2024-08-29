@@ -1,7 +1,9 @@
+import "./globals.css";
+import Navbar from "@/ui/Navbar";
+import Footer from "@/ui/Footer";
+import SessionWrapper from "@/ui/SessionWrapper";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import SessionWrapper from "@/ui/SessionWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +18,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <SessionWrapper>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Navbar />
+          {children}
+          <Footer />
+          </body>
       </SessionWrapper>
     </html>
   );
 }
+

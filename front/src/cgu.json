@@ -1,0 +1,33 @@
+{
+    "CGU": {
+        "1. Objet": "Les présentes Conditions Générales d'Utilisation (CGU) ont pour objet de définir les modalités et conditions d'utilisation du site internet géré par Lille Métropole (ci-après « la Métropole ») pour le service de ramassage des ordures.",
+        "2. Acceptation des CGU": "L'accès et l'utilisation du site impliquent l'acceptation pleine et entière des présentes CGU. Tout utilisateur du site est donc invité à les lire attentivement avant toute utilisation du service.",
+        "3. Services proposés": {
+            "description": "La Métropole met à disposition des utilisateurs un site internet permettant :",
+            "services": [
+                "La consultation des calendriers de ramassage des ordures.",
+                "La gestion des demandes spécifiques liées au service de ramassage (demande de bac, signalement de dysfonctionnement, etc.).",
+                "La réception d'informations et de notifications liées au service."
+            ]
+        },
+        "4. Accès au site": "L'accès au site est gratuit pour tous les utilisateurs disposant d'une connexion internet. La Métropole s'efforce d'assurer une disponibilité du site 24h/24 et 7j/7, mais ne saurait être tenue responsable en cas d'interruptions, de pannes ou de maintenance.",
+        "5. Collecte des données personnelles": {
+            "description": "Dans le cadre de l'utilisation du site, la Métropole est amenée à collecter certaines données personnelles des utilisateurs, à savoir :",
+            "données": [
+                "Nom et prénom",
+                "Adresse postale",
+                "Numéro de téléphone mobile",
+                "Adresse email"
+            ],
+            "but": [
+                "Identifier les utilisateurs pour la gestion des demandes liées au service de ramassage des ordures.",
+                "Améliorer la qualité du service en tenant compte des besoins des utilisateurs."
+            ]
+        },
+        "6. Utilisation des données personnelles": "Les données personnelles collectées sont strictement réservées à un usage interne par la Métropole et ne seront en aucun cas transmises à des tiers, sauf dans les cas prévus par la loi. Les utilisateurs disposent d'un droit d'accès, de rectification et de suppression de leurs données personnelles, qu'ils peuvent exercer en contactant la Métropole à l'adresse suivante : [Adresse de contact de la Métropole].",
+        "7. Responsabilité": "La Métropole met tout en œuvre pour fournir des informations précises et à jour sur son site. Cependant, elle ne saurait être tenue responsable en cas d'erreurs, d'omissions ou de résultats obtenus par l'utilisation de ces informations.",
+        "8. Modification des CGU": "La Métropole se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs seront informés de toute modification via le site internet ou par email.",
+        "9. Droit applicable et juridiction compétente": "Les présentes CGU sont soumises au droit français. Tout litige relatif à leur interprétation ou à leur exécution relève de la compétence des tribunaux français.",
+        "10. Contact": "Pour toute question relative à ces CGU, les utilisateurs peuvent contacter la Métropole à l'adresse suivante : maildelametropolelilloise@mail.com."
+    }
+}
