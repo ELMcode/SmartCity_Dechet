@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
                             </button>
                         </div>
                     ) : (
-                        <Link href="/connexion" className="flex items-center text-blue-900 hover:text-blue-700">
+                        <Link href="/aut/login" className="flex items-center text-blue-900 hover:text-blue-700">
                             <img src="/power-icon.svg" alt="Se connecter" className="h-5 w-5" />
                             <span className="ml-1">Se connecter</span>
                         </Link>
