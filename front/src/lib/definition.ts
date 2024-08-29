@@ -2,13 +2,16 @@
 
 export interface User {
     id: string;
+    nom: string;
     email: string;
-    firstName: string;
-    lastName: string;
-    address: {
-        number: string;
-        street: string;
-        complement?: string;
-        postalCode: string;
-    };
+    address: string
+}
+
+
+declare global {
+    namespace NodeJS {
+        interface ProcessEnv {
+            NEXT_BACKEND_URL: string
+        }
+    }
 }
