@@ -1,9 +1,16 @@
-"use client"
+"use client";
 
 import React from "react";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar: React.FC = () => {
+    const { data: session, status } = useSession();
+
+    const handleLogout = () => {
+        signOut();
+    };
+
     return (
         <nav className="bg-gray-100 py-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
@@ -14,7 +21,6 @@ const Navbar: React.FC = () => {
                     </Link>
                     <span className="text-xl font-semibold text-blue-900">Traitement des déchets et du recyclage</span>
                 </div>
-
 
                 {/* Liens barre nav */}
                 <ul className="flex space-x-8 text-sm font-medium text-gray-700">
@@ -33,19 +39,33 @@ const Navbar: React.FC = () => {
                             Carte
                         </Link>
                     </li>
-                    <li>
-                        <Link href="/informations-personnelles" className="hover:text-blue-700">
-                            Accéder à mon espace
-                        </Link>
-                    </li>
+                    {session && (
+                        <li>
+                            <Link href="/informations-personnelles" className="hover:text-blue-700">
+                                Mon espace
+                            </Link>
+                        </li>
+                    )}
                 </ul>
 
-                {/* Logo connexion */}
+                {/* Connexion / Déconnexion */}
                 <div className="flex items-center space-x-2">
-                    <Link href="/connexion" className="flex items-center text-blue-900 hover:text-blue-700">
-                        <img src="/power-icon.svg" alt="Se connecter" className="h-5 w-5" />
-                        <span className="ml-1">Se connecter</span>
-                    </Link>
+                    {status === "authenticated" ? (
+                        <div className="flex items-center space-x-4">
+                            <span className="text-blue-900">Bienvenue, {session.user?.name}!</span>
+                            <button
+                                onClick={handleLogout}
+                                className="text-blue-900 hover:text-blue-700"
+                            >
+                                Se déconnecter
+                            </button>
+                        </div>
+                    ) : (
+                        <Link href="/connexion" className="flex items-center text-blue-900 hover:text-blue-700">
+                            <img src="/power-icon.svg" alt="Se connecter" className="h-5 w-5" />
+                            <span className="ml-1">Se connecter</span>
+                        </Link>
+                    )}
                 </div>
             </div>
         </nav>
