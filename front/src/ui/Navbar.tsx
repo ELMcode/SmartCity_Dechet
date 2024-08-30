@@ -11,12 +11,13 @@ const Navbar: React.FC = () => {
         signOut();
     };
 
+    console.log(session);
     return (
         <nav className="bg-gray-100 py-4 shadow-md">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo et titre */}
                 <div className="flex items-center space-x-4">
-                    <Link href="/front/public">
+                    <Link href="/">
                         <img src="/logo.svg" alt="Ville de Lille" className="h-12" />
                     </Link>
                     <span className="text-xl font-semibold text-blue-900">Traitement des déchets et du recyclage</span>
@@ -25,7 +26,7 @@ const Navbar: React.FC = () => {
                 {/* Liens barre nav */}
                 <ul className="flex space-x-8 text-sm font-medium text-gray-700">
                     <li>
-                        <Link href="/accueil" className="hover:text-blue-700">
+                        <Link href="/" className="hover:text-blue-700">
                             Accueil
                         </Link>
                     </li>
@@ -52,7 +53,7 @@ const Navbar: React.FC = () => {
                 <div className="flex items-center space-x-2">
                     {status === "authenticated" ? (
                         <div className="flex items-center space-x-4">
-                            <span className="text-blue-900">Bienvenue, {session.user?.name}!</span>
+                            <span className="text-blue-900">Bienvenue, {session.user?.nom}!</span>
                             <button
                                 onClick={handleLogout}
                                 className="text-blue-900 hover:text-blue-700"
@@ -61,7 +62,7 @@ const Navbar: React.FC = () => {
                             </button>
                         </div>
                     ) : (
-                        <Link href="/aut/login" className="flex items-center text-blue-900 hover:text-blue-700">
+                        <Link href="/auth/login" className="flex items-center text-blue-900 hover:text-blue-700">
                             <img src="/power-icon.svg" alt="Se connecter" className="h-5 w-5" />
                             <span className="ml-1">Se connecter</span>
                         </Link>
