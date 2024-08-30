@@ -62,10 +62,15 @@ const Navbar: React.FC = () => {
                             </button>
                         </div>
                     ) : (
-                        <Link href="/auth/login" className="flex items-center text-blue-900 hover:text-blue-700">
-                            <img src="/power-icon.svg" alt="Se connecter" className="h-5 w-5" />
-                            <span className="ml-1">Se connecter</span>
-                        </Link>
+                        <div className="flex items-center space-x-4">
+                            <Link href="/auth/login" className="flex items-center text-blue-900 hover:text-blue-700">
+                                <img src="/power-icon.svg" alt="Se connecter" className="h-5 w-5" />
+                                <span className="ml-1">Se connecter</span>
+                            </Link>
+                            <Link href="/auth/register" className="flex items-center text-blue-900 hover:text-blue-700">
+                                <span>Inscription</span>
+                            </Link>
+                        </div>
                     )}
                 </div>
             </div>
