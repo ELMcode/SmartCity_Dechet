@@ -1,0 +1,8 @@
+name: Project configuration
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Project checkout
+        uses: actions/checkout@v4
