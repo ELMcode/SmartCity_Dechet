@@ -3,7 +3,7 @@ name: CI for Next.js Project
 on: 
   push:
     branches:
-      - main  # Changez ceci selon votre branche principale
+      - main 
 
 jobs:
   build:
