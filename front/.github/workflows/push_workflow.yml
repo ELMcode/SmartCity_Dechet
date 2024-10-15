@@ -1,0 +1,36 @@
+name: CI for Next.js Project
+
+on: 
+  push:
+    branches:
+      - develop 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run TypeScript check
+        run: npm run check  
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Start the application
+        run: npm start
+        env:
+          CI: true  
+      - name: Wait for the server to start
+        run: |
+          sleep 10  # Attendez un peu que le serveur démarre
+          curl --fail http://localhost:3000  # Vérifiez que le serveur fonctionne
