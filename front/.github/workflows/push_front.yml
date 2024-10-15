@@ -1,8 +1,38 @@
-name: Project configuration
-on: push
+name: CI for Next.js Project
+
+on: 
+  push:
+    branches:
+      - main  # Changez ceci selon votre branche principale
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Project checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Changez ceci selon la version de Node.js que vous utilisez
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run TypeScript check
+        run: npm run check  # Assurez-vous d'avoir un script `check` dans votre package.json
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Start the application
+        run: npm start &  # Démarre le serveur en arrière-plan
+        env:
+          CI: true  # Définit l'environnement de CI pour certaines bibliothèques
+
+      - name: Wait for the server to start
+        run: |
+          sleep 10  # Attendez un peu que le serveur démarre
+          curl --fail http://localhost:3000  # Vérifiez que le serveur fonctionne
